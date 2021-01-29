@@ -1,0 +1,6 @@
+- hosts: all
+  become: True
+  roles:
+     - configure_sudoers
+  tags:
+    - dev
