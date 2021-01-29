@@ -1,0 +1,10 @@
+- block:
+  tags:
+    - dev
+    - prod
+- name: Create sudoers commands for user
+      blockinfile:
+        path: "/etc/sudoers.d/user"
+        create: yes
+        block: |
+          user ALL=(ALL) /bin/systemctl status omsagent-{{ workspace_id }}.service
